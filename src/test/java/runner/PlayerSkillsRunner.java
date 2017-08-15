@@ -2,6 +2,8 @@ package runner;
 
 import java.util.Map;
 
+import org.apache.log4j.Logger;
+
 import proxyanddecorator.BasketballPlayer;
 import proxyanddecorator.FootballPlayer;
 import proxyanddecorator.JuniorDecorator;
@@ -11,6 +13,8 @@ import proxyanddecorator.RichDecorator;
 import proxyanddecorator.SkillInterface;
 
 public class PlayerSkillsRunner {
+    
+    final static Logger logger = Logger.getLogger(PlayerSkillsRunner.class);
     
     public static void main(String[] args) {
         // TODO Auto-generated method stub

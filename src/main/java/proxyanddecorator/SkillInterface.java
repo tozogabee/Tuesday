@@ -3,5 +3,5 @@ package proxyanddecorator;
 import java.util.Map;
 
 public interface SkillInterface {
-    Map<String, String> getSkill();
+    public Map<String, String> getSkill();
 }

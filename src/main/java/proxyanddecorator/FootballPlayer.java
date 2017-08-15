@@ -2,7 +2,11 @@ package proxyanddecorator;
 
 import java.util.Map;
 
+import org.apache.log4j.Logger;
+
 public class FootballPlayer implements PlayerInterface {
+    
+    final static Logger logger = Logger.getLogger(FootballPlayer.class);
     
     private SkillInterface skills;
     private String fileName;

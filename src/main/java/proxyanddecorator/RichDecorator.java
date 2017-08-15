@@ -1,9 +1,13 @@
 package proxyanddecorator;
 
 public class RichDecorator extends PlayerDecorator {
-    
-    public RichDecorator(PlayerInterface decoratedShape) {
-        super(decoratedShape);
+
+    private SkillInterface skills;
+    private AbstractPlayer decoratedShape;
+
+    public RichDecorator(String playerType,AbstractPlayer decoratedShape) {
+        super("Rich "+playerType+" decorator",decoratedShape);
+        this.decoratedShape=decoratedShape;
     }
     
     @Override
@@ -12,7 +16,13 @@ public class RichDecorator extends PlayerDecorator {
         setSpeed(decoratedPlayer);
         
     }
-    
+
+    @Override
+    public SkillInterface getSkills() {
+        return decoratedShape.getSkills();
+    }
+
+
     private void setSpeed(PlayerInterface decoratedShape) {
         System.out.print(" Rich ");
     }

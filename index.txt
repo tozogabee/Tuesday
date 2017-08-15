@@ -1,0 +1,1 @@
+Speed=25;color=red;size=176;weight=85

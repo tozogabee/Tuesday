@@ -2,15 +2,10 @@ package runner;
 
 import java.util.Map;
 
+import fileWriting.FileWriting;
 import org.apache.log4j.Logger;
 
-import proxyanddecorator.BasketballPlayer;
-import proxyanddecorator.FootballPlayer;
-import proxyanddecorator.JuniorDecorator;
-import proxyanddecorator.PlayerInterface;
-import proxyanddecorator.ProxySkill;
-import proxyanddecorator.RichDecorator;
-import proxyanddecorator.SkillInterface;
+import proxyanddecorator.*;
 import org.junit.*;
 import org.testng.*;
 
@@ -21,8 +16,15 @@ public class PlayerSkillsRunner {
     
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-        
-        SkillInterface proxySkill = new ProxySkill("index.txt");
+        PlayerInterface footBallPlayer=new FootballPlayer("index.txt","PlayerHistory.txt");
+
+        FileWriting fw=new FileWriting("PlayerResult.txt");
+        fw.writeToFile(footBallPlayer.listingHistories());
+        fw.writeToFile();
+
+
+
+        //SkillInterface proxySkill = new ProxySkill("index.txt");
         // FileReading fileReading = new FileReading("index.txt");
         // Map<String, String> properties = fileReading.getPropertyList();
         

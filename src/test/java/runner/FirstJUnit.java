@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 
 public class FirstJUnit {
 
-    private PlayerInterface basketballPlayer;
+    /*private PlayerInterface basketballPlayer;
     private PlayerInterface footballPlayer;
     private PlayerInterface JuniorFootBallPlayer;
     private PlayerInterface JuniorBasketballPlayer;
@@ -130,7 +130,7 @@ public class FirstJUnit {
             }
 
          }
-    }
+    }*/
 
 
 

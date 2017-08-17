@@ -1,5 +1,6 @@
 package proxyanddecorator;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
@@ -9,14 +10,18 @@ public class BasketballPlayer extends AbstractPlayer {
     //final static Logger logger = Logger.getLogger(BasketballPlayer.class);
     
     private SkillInterface skills;
+    private HistoryInterface histories;
     private String fileName;
+    private String historyFileName;
 
 
     
-    public BasketballPlayer(String fileName) {
+    public BasketballPlayer(String fileName,String historyFileName) {
         super("BasketBallPlayer");
         this.fileName = fileName;
+        this.historyFileName=historyFileName;
         this.skills = new ProxySkill(fileName);
+        this.histories=new ProxyPlayerHistory(this.historyFileName);
         
     }
 
@@ -24,6 +29,17 @@ public class BasketballPlayer extends AbstractPlayer {
     @Override
     public SkillInterface getSkills() {
         return skills;
+    }
+
+    @Override
+    public HistoryInterface beforeTeam() {
+        return this.histories;
+    }
+
+    @Override
+    public List<String> listingHistories()
+    {
+        return this.histories.beforeTeam();
     }
 
     public void setSkills(SkillInterface skills) {

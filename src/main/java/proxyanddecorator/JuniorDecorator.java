@@ -1,9 +1,11 @@
 package proxyanddecorator;
 
+import java.util.List;
+
 public class JuniorDecorator extends PlayerDecorator {
 
     private SkillInterface skills;
-
+    private HistoryInterface histories;
     AbstractPlayer decoratedShape;
 
     public JuniorDecorator(String playerType,AbstractPlayer decoratedShape) {
@@ -19,11 +21,21 @@ public class JuniorDecorator extends PlayerDecorator {
     }
 
     @Override
+    public List<String> listingHistories()
+    {
+        return this.beforeTeam().beforeTeam();
+    }
+
+    @Override
     public SkillInterface getSkills()
     {
         return decoratedShape.getSkills();
     }
 
+    @Override
+    public HistoryInterface beforeTeam() {
+        return decoratedShape.beforeTeam();
+    }
 
 
     private void setRedBody(PlayerInterface decoratedShape) {

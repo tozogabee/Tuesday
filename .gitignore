@@ -1,14 +1,7 @@
-<<<<<<< HEAD
+.idea/*
 target/*
 .classpath
 .project
 .settings/*
 .idea/*
-=======
-target/*
-.classpath
-.project
-.settings/*
-.idea/*
->>>>>>> e938b9c8516d0b4dd72a052f7aa21caeff417f70
 *.iml
